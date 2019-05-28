@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>게시물 등록</h2>
+  
+    <table class="table table-bordered">
+      <thead>
+          <tr>
+            <th>제목</th>
+            <td><input type="text" id="title"></td>
+          </tr>
+          <tr>
+            <th>내용</th>
+            <td><textarea id="content"></textarea></td>
+          </tr>
+          <tr>
+          <th>작성자</th>
+          <td><input type="text" id="writer"></td>
+         </tr>
+      </thead>
+      <tbody>
+               
+        <tr *ngIf="boardList.length==0">
+          <td colspan="7" align="center">내용없음</td>      
+        </tr>
+        <tr *ngFor="let board of boardList">
+          <td>{{board.biNum}}</td>
+          <td>{{board.biTitle}}</td>
+          <td>{{board.biWriter}}</td>
+          <td>{{board.biCredat}}</td>
+          <td>{{board.biCretim}}</td>
+          <td>{{board.biCnt}}</td>
+          <td>{{board.biLike}}</td>
+        </tr>
+  
+      </tbody>
+    </table>
+    <button (click)="goPage('insert')">저장</button>
+  </div>
+  
+  
